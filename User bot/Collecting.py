@@ -5,12 +5,12 @@ days = []
 months = []
 usernames = []
 
-print('Закончить (при выборе действия) - enter')
+print('End (when you choose an action) - enter')
 
 while True:
     print(*names)
-    print('Удалить участника - delete')
-    print('Добавить участника - add')
+    print('Delete from the members list  - delete')
+    print('Add member - add')
     command = str(input())
     print()
 
@@ -18,8 +18,8 @@ while True:
         for index in range(len(names)):
             number = index + 1
             print(f'{number}. {names[index]}')
-        choice = int(input('Введите номер человека, '
-                           'которого вы хотите удалить: '))  - 1
+        choice = int(input('Type in the number of person, you want'
+                           'to delete: '))  - 1
         names.remove(names[choice])
         texts.remove(texts[choice])
         days.remove(days[choice])
@@ -28,19 +28,19 @@ while True:
         print()
 
     if command == 'add':
-        name = str(input('Введите имя: '))
+        name = str(input('Name: '))
         names.append(name)
-        text = str(input('Введите текст поздравления: '))
+        text = str(input('Text: '))
         texts.append(text)
-        day = int(input('Введите день: '))
+        day = int(input('Day: '))
         days.append(day)
-        month = int(input('Введите месяц (цифрой): '))
+        month = int(input('Month (with a number): '))
         months.append(month)
-        username = str(input('Введите имя пользователя: '))
+        username = str(input('Telegram username: '))
         usernames.append(username)
         print()
     if command == '':
         break
 
     if command != 'add' and command != 'delete' and command != '':
-        print('Команда не распознана')
+        print('There is no such a command!')
